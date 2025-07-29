@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manha Automobiles - Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Manha Automobiles</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Our Stock ▼</a>
+  <ul class="dropdown-menu">
+    <li><a href="live-stock.html">Live Stock</a></li>
+    <li><a href="incoming.html">Incoming</a></li>
+  </ul>
+</li>
+
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="companyimg.jpg" alt="Our Dealership Building" class="company-img"/>
+  </section>
+
+  <main class="home-content">
+    <h2 style="text-align: center;">Welcome to Manha Automobiles</h2>
+    <p style="text-align: center;">We offer a wide variety of vehicles to suit your style, needs, and budget.</p>
+
+    <div class="car-list-section">
+      <h2 style="text-align: center; padding-bottom: 10px;">Available Cars</h2>
+      <div id="car-list" class="car-list">
+        <!-- Cars loaded by JS -->
+      </div>
+    </div>
+
+    <div id="car-detail" class="car-detail hidden">
+      <div id="car-detail-content"></div>
+      <button class="close-btn" onclick="closeDetails()">×</button>
+    </div>
+
+    <div class="scroll-section">
+      <div class="scroll-item" style="text-align: center;">Premium Cars | Trusted by Thousands | Best-in-class Service</div>
+    </div>
+  </main>
+
+  <footer>
+    <p style="text-align: center;">
+      &copy; 2025 Manha Automobiles. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car List - Manha Automobiles</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Manha Automobiles</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="car-list.html">Car List</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="car-list-section">
+    <h2>Our Available Cars</h2>
+    <div id="car-list" class="car-list">
+      <!-- Cars will be injected by script.js -->
+    </div>
+  </main>
+
+  
+  <div id="car-detail" class="car-detail hidden">
+  <div id="car-detail-content">
+    <!-- Car details will be inserted here -->
+  </div>
+  <button class="close-btn" onclick="closeDetails()">×</button>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Manha Automobiles. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

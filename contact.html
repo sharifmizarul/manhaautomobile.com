@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Manha Automobiles</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+ <header>
+    <nav class="navbar">
+      <div class="logo">Manha Automobiles</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Our Stock ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="live-stock.html">Live Stock</a></li>
+            <li><a href="incoming.html">Incoming</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Email: car@manhaautomobile.com</p>
+    <p>Phone: +88 01916-233132</p>
+    <p>Address: 257/C, West Manikdi, 
+      Beside Kalshi Steel Bridge, Opposite of Sumatra Filling Station, 
+      Dhaka 1206, Bangladesh.</p>
+  </main>
+
+<footer style="color: white; display: flex; justify-content: space-between; padding: 20px; background-color: #000;">
+  <div style="text-align: left;">
+    <a href="index.html" style="color: white; display: block; text-decoration: none; padding: 4px;">Home</a>
+    <a href="car-list.html" style="color: white; display: block; text-decoration: none;padding: 4px;">Car List</a>
+  </div>
+  <div style="text-align: center;">
+  <a href="https://www.facebook.com/profile.php?id=61572473530106"><img src="facebook.png" style="width:42px;height:42px;"></a>
+  </div>
+  <div style="text-align: right;">
+    <a href="about.html" style="color: white; display: block; text-decoration: none;padding: 4px;">About</a>
+    <a href="news.html" style="color: white; display: block; text-decoration: none;padding: 4px;">News</a>
+  </div>
+</footer>
+
+<p style="text-align: center; background-color: #000; color: white; margin: 0; padding: 10px;">
+  &copy; 2025 Manha Automobiles. All rights reserved.
+</p>
+
+  <script src="script.js"></script>
+</body>
+</html>

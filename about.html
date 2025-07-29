@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Manha Automobiles</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+ <header>
+    <nav class="navbar">
+      <div class="logo">Manha Automobiles</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Our Stock ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="live-stock.html">Live Stock</a></li>
+            <li><a href="incoming.html">Incoming</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about-section">
+    <h2 style="text-align: center;">About Us</h2>
+    <p style="text-align: center;">Manha Automobiles is dedicated to providing the best in automotive solutions. 
+    With years of experience and a passionate team, we ensure customer satisfaction, 
+    quality service, and competitive pricing.</p>
+  </main>
+
+ <footer>
+    <p style="text-align: center;">
+      &copy; 2025 Manha Automobiles. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Details</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .company-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .description {
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Image Modal Styles */
+    .image-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .image-modal.hidden {
+      display: none;
+    }
+
+    .image-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .close-image {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Quotation Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-box h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .modal-box p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+      <div class="logo">Manha Automobiles</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Our Stock ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="live-stock.html">Live Stock</a></li>
+            <li><a href="incoming.html">Incoming</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="companyimg.jpg" alt="Company Image" class="company-img" />
+  </section>
+
+  <h1>Toyota Prius</h1>
+
+  
+
+<div class="gallery">
+    <img src="cardetails-photos/tprius/car1.jpg" alt="Car image 1" />
+    <img src="cardetails-photos/tprius/car2.jpg" alt="Car image 2" />
+    <img src="cardetails-photos/tprius/car3.jpg" alt="Car image 3" />
+    <img src="cardetails-photos/tprius/car4.jpg" alt="Car image 4" />
+    <img src="cardetails-photos/tprius/car5.jpg" alt="Car image 5" />
+    <img src="cardetails-photos/tprius/car6.jpg" alt="Car image 6" />
+  </div>
+
+  <div class="description">
+    <h2>Description</h2>
+    <p>
+      This Japanese sedan offers exceptional fuel efficiency, reliability, and modern safety features. With a sleek design and comfortable interior, it's perfect for both city driving and long-distance travel.
+    </p>
+  </div>
+
+  <h2>Features</h2>
+<table>
+    <tr><th>Feature</th><th>Details</th></tr>
+    <tr><td>Engine</td><td>1800CC</td></tr>
+    <tr><td>Package</td><td>S Safety</td></tr>
+    <tr><td>Colour</td><td>Pearl</td></tr>
+    <tr><td>Manufacture Year</td><td>2019</td></tr>
+    <tr><td>Transmission</td><td>Automatic</td></tr>
+    <tr><td>Infotainment</td><td>Touchscreen</td></tr>
+    <tr><td>Interior</td><td>Black, Fabric Seats</td></tr>
+    <tr><td>Service Warranty</td><td>3 Years</td></tr>
+    <tr><td>Mileage</td><td> 75700 KM</td></tr>
+    <tr><td>Other Features</td><td>HYBRID</td></tr>
+  </table>
+
+  <button class="btn" onclick="openQuotationModal()">Get Quotation</button>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal hidden">
+    <span class="close-image" onclick="closeImageModal()">×</span>
+    <img id="modalImage" src="" alt="Full Image"/>
+  </div>
+
+  <!-- Quotation Modal -->
+  <div id="quotationModal" class="modal-overlay">
+    <div class="modal-box">
+      <span class="close-modal" onclick="closeQuotationModal()">×</span>
+      <h3>Contact Us for Quotation</h3>
+      <p><strong>Phone:</strong> +88 01916-233132</p>
+      <p><strong>Email:</strong> car@manhaautomobile.com</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const dropdownMenu = event.target.nextElementSibling;
+      if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+      } else {
+        dropdownMenu.style.display = 'block';
+      }
+    }
+
+    // Image modal logic
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modalImg.src = img.src;
+      });
+    });
+
+    function closeImageModal() {
+      modal.classList.add('hidden');
+      modalImg.src = '';
+    }
+
+    // Quotation modal logic
+    const quotationModal = document.getElementById('quotationModal');
+
+    function openQuotationModal() {
+      quotationModal.classList.add('show');
+    }
+
+    function closeQuotationModal() {
+      quotationModal.classList.remove('show');
+    }
+
+    // Close modal on clicking outside the modal box
+    quotationModal.addEventListener('click', e => {
+      if (e.target === quotationModal) {
+        closeQuotationModal();
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,264 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+header {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a.active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+}
+
+.company-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  height: auto;
+}
+
+.car-list-section {
+  padding: 2rem;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.car-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.car-item:hover {
+  transform: scale(1.03);
+}
+
+.car-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.car-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.car-detail:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.car-detail.hidden {
+  display: flex; /* Ensures fade-out transition works */
+  opacity: 0;
+  pointer-events: none;
+}
+
+#car-detail-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.car-detail button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    background-color: #1a1a1a;
+    display: none;
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #444;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .car-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .car-item {
+    width: 90%;
+  }
+
+  #car-detail-content {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 101;
+}
+/* Dropdown container */
+.nav-links .dropdown {
+  position: relative;
+}
+
+/* Dropdown menu base */
+.nav-links .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a1a1a;
+  display: none;
+  flex-direction: column;
+  width: 200px;
+  z-index: 999;
+  border: 1px solid #333;
+}
+
+/* Show on hover (desktop) */
+.nav-links .dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Show when active (mobile click) */
+.nav-links .dropdown.open .dropdown-menu {
+  display: flex;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #444;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+/* Mobile styling */
+@media (max-width: 768px) {
+  .nav-links .dropdown-menu {
+    position: static;
+    width: 100%;
+    border: none;
+  }
+
+  .dropdown-menu li {
+    border-top: none;
+  }
+}
+
+/* Mobile fix for dropdown */
+@media (max-width: 768px) {
+  .nav-links .dropdown-menu {
+    position: static;
+    width: 100%;
+    border: none;
+  }
+}

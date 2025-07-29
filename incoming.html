@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incoming Cars - Manha Automobiles</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Manha Automobiles</div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Our Stock ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="live-stock.html">Live Stock</a></li>
+            <li><a href="incoming.html">Incoming</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="car-list-section">
+    <h2 style="text-align: center;">Incoming Cars</h2>
+    <div id="car-list" class="car-list"></div>
+  </main>
+
+  <div id="car-detail" class="car-detail hidden">
+    <div id="car-detail-content"></div>
+    <button class="close-btn" onclick="closeDetails()">×</button>
+  </div>
+
+ <footer>
+    <p style="text-align: center;">
+      &copy; 2025 Manha Automobiles. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Load only incoming cars
+    const incomingCars = cars.filter(car => car.name.toLowerCase().includes('incoming'));
+    const carList = document.getElementById('car-list');
+
+    incomingCars.forEach(car => {
+      const carDiv = document.createElement('div');
+      carDiv.classList.add('car-item');
+      carDiv.innerHTML = `
+        <img src="${car.image}" alt="${car.name}" />
+        <h3>${car.name}</h3>
+      `;
+      carDiv.onclick = () => showCarDetails(car);
+      carList.appendChild(carDiv);
+    });
+  </script>
+</body>
+</html>
